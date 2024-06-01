@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: "artism",
-  description: "예술인의 공간",
+  title: 'artism',
+  description: '예술인의 공간',
 };
 
 export default function RootLayout({
@@ -14,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang='en' suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true}>
         <ThemeProvider
-          defaultTheme="system"
+          defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
