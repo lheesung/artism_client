@@ -10,11 +10,7 @@ import { getRandomInt } from '@/utils/number';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-interface ContainerProps {
-  background: string;
-}
-
-const Container = styled.div<ContainerProps>`
+const Container = styled.div<{ background: string }>`
   display: flex;
   width: 100vw;
   height: 100vh;
