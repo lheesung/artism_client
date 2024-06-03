@@ -1,8 +1,39 @@
-import ChildrenType from '@/types/children.type';
+import { ArrowBigLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import styled from 'styled-components';
 
-const Header = ({ children }: ChildrenType) => {
-  return <div className='w-full h-40px bg-white'></div>;
+const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 40px;
+`;
+
+const Elements = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(164, 164, 164, 0.5);
+  }
+  transition: 0.3s ease-in-out;
+`;
+
+const Header = () => {
+  const { push } = useRouter();
+  return (
+    <HeaderContainer onClick={() => push('/')}>
+      <Elements>
+        <ArrowBigLeft />
+        Go back to Home
+      </Elements>
+    </HeaderContainer>
+  );
 };
 
 export default Header;
