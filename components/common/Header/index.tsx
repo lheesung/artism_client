@@ -19,7 +19,7 @@ const Elements = styled.div`
   padding: 8px;
   cursor: pointer;
   &:hover {
-    background-color: rgba(164, 164, 164, 0.5);
+    transform: scale(1.1);
   }
   transition: 0.3s ease-in-out;
 `;
