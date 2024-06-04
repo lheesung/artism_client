@@ -1,28 +1,37 @@
-import { cn } from '@/lib/utils';
-import { theme } from '@/styles/base/theme';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ButtonHTMLAttributes } from 'react';
+import styled from 'styled-components';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   isColored?: boolean;
-  onClickButton: () => void;
+  onClickButton?: () => void;
 }
+
+const StyledButton = styled.button<ButtonProps>`
+  border: 1px solid black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, transform 0.2s;
+
+  &:hover {
+    background-color: ${(props) => (props.isColored ? '#FEBC2E' : '#FED119')};
+    transform: scale(1.05);
+  }
+
+  ${({ isColored }) => isColored && `background-color: #FED119;`}
+`;
 
 const Button: React.FC<ButtonProps> = ({
   children,
   isColored = false,
   onClickButton,
+  ...rest
 }) => {
   return (
-    <button
-      onClick={onClickButton}
-      className={cn(
-        'border border-black px-5 py-3 hover:bg-[#FED119] ease-out duration-200 text-lg hover:scale-105',
-        isColored && 'bg-[#FED119] hover:bg-[#FEBC2E] hover:scale-105'
-      )}
-    >
+    <StyledButton onClick={onClickButton} {...rest}>
       {children}
-    </button>
+    </StyledButton>
   );
 };
 

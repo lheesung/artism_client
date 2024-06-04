@@ -48,7 +48,7 @@ export default function Home() {
       <Content>
         <Image src={Logos[randNumber]} alt={'artism'} width={400} />
         <Title>아티즘에서 영감을 나누세요.</Title>
-        <Button onClickButton={() => push('/gallery')} isColored>
+        <Button onClick={() => push('/gallery')} isColored>
           아티즘 입장하기
         </Button>
       </Content>
