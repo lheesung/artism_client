@@ -9,20 +9,16 @@ import { useRouter } from 'next/navigation';
 import { getRandomInt } from '@/utils/number';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Column } from '@/styles/ui/flex';
 
-const Container = styled.div<{ background: string }>`
-  display: flex;
+const Container = styled(Column)<{ background: string }>`
   width: 100vw;
   height: 100vh;
   background: ${({ background }) =>
     `linear-gradient(to bottom, ${background}, #ffffff)`};
-  align-items: center;
-  justify-content: center;
 `;
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
+const Content = styled(Column)`
   align-items: center;
   gap: 8px;
 `;

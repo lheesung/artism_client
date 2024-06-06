@@ -13,13 +13,16 @@ const Gallery = () => {
   return (
     <PagePadding>
       <Header />
-      <S.CenteredContainer>
-        <S.Title>THE WORKS OF THE MONTH</S.Title>
-        <IconButton
-          icon={<MdOutlineArrowDropDown size={20} />}
-          onClickIcon={onClickDropdown}
-        />
-      </S.CenteredContainer>
+      <PagePadding>
+        <S.CenteredContainer>
+          <S.Title>THE WORKS OF THE MONTH</S.Title>
+          <IconButton
+            icon={<MdOutlineArrowDropDown size={20} />}
+            onClickIcon={onClickDropdown}
+          />
+          <S.DropDownContainer />
+        </S.CenteredContainer>
+      </PagePadding>
     </PagePadding>
   );
 };

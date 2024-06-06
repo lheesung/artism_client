@@ -1,12 +1,18 @@
+import styled from 'styled-components';
 import ChildrenType from '@/types/children.type';
-import React from 'react';
+
+const PagePaddingContainer = styled.div`
+  margin: 0 auto;
+  padding: 10px 20px;
+
+  @media (min-width: 1024px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+`;
 
 const PagePadding = ({ children }: ChildrenType) => {
-  return (
-    <div className='bg-red-500 mx-auto px-20 py-10 lg:px-[100px]'>
-      {children}
-    </div>
-  );
+  return <PagePaddingContainer>{children}</PagePaddingContainer>;
 };
 
 export default PagePadding;
