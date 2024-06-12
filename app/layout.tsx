@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import StyledComponentsRegistry from '@/lib/registry';
+import CustomCursor from '@/components/common/Cursor';
 
 export const metadata: Metadata = {
   title: 'artism',
@@ -23,6 +23,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <CustomCursor />
             {children}
           </ThemeProvider>
         </StyledComponentsRegistry>

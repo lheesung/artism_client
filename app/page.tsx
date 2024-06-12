@@ -26,7 +26,6 @@ const Content = styled(Column)`
 const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  cursor: grab;
 `;
 
 export default function Home() {

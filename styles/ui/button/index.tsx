@@ -11,7 +11,6 @@ const StyledButton = styled.button<ButtonProps>`
   border: 1px solid black;
   padding: 10px 20px;
   font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.2s ease-out, transform 0.2s;
 
   &:hover {

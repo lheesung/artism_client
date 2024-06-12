@@ -17,7 +17,6 @@ export const Title = styled.span`
 export const IconButton = styled.button`
   background: none;
   border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

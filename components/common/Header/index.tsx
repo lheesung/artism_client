@@ -18,7 +18,6 @@ const Elements = styled.div`
   gap: 8px;
   border-radius: 8px;
   padding: 8px;
-  cursor: pointer;
   &:hover {
     transform: scale(1.1);
   }
