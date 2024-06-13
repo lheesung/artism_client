@@ -6,11 +6,13 @@ import styled from 'styled-components';
 const Cursor = styled.div`
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #fff;
   position: absolute;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+  top: 60px;
+  left: 60px;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  will-change: transform;
   z-index: 9999;
 `;
 

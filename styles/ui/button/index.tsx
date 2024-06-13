@@ -16,6 +16,7 @@ const StyledButton = styled.button<ButtonProps>`
   &:hover {
     background-color: ${(props) => (props.isColored ? '#FEBC2E' : '#FED119')};
     transform: scale(1.05);
+    cursor: none;
   }
 
   ${({ isColored }) => isColored && `background-color: #FED119;`}
