@@ -10,12 +10,12 @@ const IconButton: React.FC<IconButtonProps> = ({
   onClickIcon = () => {},
 }) => {
   return (
-    <div
+    <button
       onClick={onClickIcon}
-      className='flex justify-center items-center w-[36px] h-[36px] hover:bg-[rgba(144,144,144,0.1)] rounded-full cursor-pointer'
+      className='flex justify-center items-center w-[36px] h-[36px] hover:bg-[rgba(144,144,144,0.1)] rounded-full cursor-none'
     >
       {icon}
-    </div>
+    </button>
   );
 };
 

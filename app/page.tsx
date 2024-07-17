@@ -10,6 +10,7 @@ import { getRandomInt } from '@/utils/number';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Column } from '@/styles/ui/flex';
+import Header from '@/components/common/Header';
 
 const Container = styled(Column)<{ background: string }>`
   width: 100vw;
@@ -39,14 +40,17 @@ export default function Home() {
   }, []);
 
   return (
-    <Container background={colors[randNumber]}>
-      <Content>
-        <Image src={Logos[randNumber]} alt={'artism'} width={400} />
-        <Title>아티즘에서 영감을 나누세요.</Title>
-        <Button onClick={() => push('/gallery')} isColored>
-          아티즘 입장하기
-        </Button>
-      </Content>
-    </Container>
+    <>
+      <Header isColored={true} />
+      <Container background={colors[randNumber]}>
+        <Content>
+          <Image src={Logos[randNumber]} alt={'artism'} width={400} />
+          <Title>아티즘에서 영감을 나누세요.</Title>
+          <Button onClick={() => push('/gallery')} isColored>
+            아티즘 입장하기
+          </Button>
+        </Content>
+      </Container>
+    </>
   );
 }

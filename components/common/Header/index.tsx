@@ -1,39 +1,45 @@
 'use client';
-import { ArrowBigLeft } from 'lucide-react';
+
+import { theme } from '@/styles/base/theme';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import styled from 'styled-components';
 
-const HeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  height: 40px;
-`;
+interface HeaderProps {
+  isColored?: boolean;
+}
 
-const Elements = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 8px;
-  padding: 8px;
-  &:hover {
-    transform: scale(1.1);
-  }
-  transition: 0.3s ease-in-out;
-`;
-
-const Header = () => {
+const Header = ({ isColored = false }: HeaderProps) => {
   const { push } = useRouter();
   return (
-    <HeaderContainer onClick={() => push('/')}>
-      <Elements>
-        <ArrowBigLeft />
-        Go back to Home
-      </Elements>
+    <HeaderContainer isColored={isColored}>
+      <HeaderElement onClick={() => push('/')}>홈</HeaderElement>
+      <HeaderElement onClick={() => push('/gallery')}>갤러리</HeaderElement>
+      <HeaderElement onClick={() => push('/profile')}>나</HeaderElement>
+      <HeaderElement onClick={() => push('/login')}>로그인</HeaderElement>
     </HeaderContainer>
   );
 };
 
 export default Header;
+
+const HeaderContainer = styled.div<HeaderProps>`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  border-bottom: 1px solid;
+  z-index: 9999;
+  background-color: ${(props) => (props.isColored ? `transparent` : 'white')};
+`;
+
+const HeaderElement = styled.button`
+  width: 33%;
+  height: 100%;
+  border-left: 1px solid ${theme.base.black};
+  &:hover {
+    background-color: ${theme.primary};
+  }
+  transition: 0.2s ease-in-out;
+`;

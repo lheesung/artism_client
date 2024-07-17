@@ -10,7 +10,7 @@ export const Row = styled.div<FlexProps>`
   display: flex;
   justify-content: ${(props) => props.justifyContent || 'center'};
   align-items: ${(props) => props.alignItems || 'center'};
-  gap: ${(props) => props.gap || 0};
+  gap: ${(props) => `${props.gap}px` || 0};
 `;
 
 export const Column = styled.div<FlexProps>`
@@ -18,5 +18,5 @@ export const Column = styled.div<FlexProps>`
   flex-direction: column;
   justify-content: ${(props) => props.justifyContent || 'center'};
   align-items: ${(props) => props.alignItems || 'center'};
-  gap: ${(props) => props.gap || 0};
+  gap: ${(props) => `${props.gap}px` || 0};
 `;

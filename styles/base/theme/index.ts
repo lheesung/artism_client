@@ -5,4 +5,5 @@ export const theme = {
   },
   primary: '#FED119',
   secondary: '#DDB719',
+  burgundy: '#902626',
 };

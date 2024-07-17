@@ -1,7 +1,6 @@
 'use client';
 
 import { font } from '@/styles/base/font';
-import { Row } from '@/styles/ui/flex';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -9,21 +8,21 @@ const Cursor = styled.div<{ isOverButton: boolean }>`
   width: 30px;
   height: 30px;
   background-color: #fff;
-  position: absolute;
-  top: 60px;
-  left: 60px;
+  position: fixed;
   mix-blend-mode: difference;
   border-radius: 50%;
   will-change: transform;
-  z-index: 9999;
-  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+  z-index: 99999;
+  pointer-events: none;
+  transition: width 0.2s ease, height 0.2s ease, border-radius 0.2s ease;
+
   ${({ isOverButton }) =>
     isOverButton &&
     css`
       width: 80px;
-      height: 40px;
+      height: 50px;
       border-radius: 50px;
-      ${font.xl}
+      ${font.lg}
     `}
   display: flex;
   justify-content: center;
@@ -39,7 +38,10 @@ const CustomCursor = () => {
       setPosition({ x: event.clientX, y: event.clientY });
 
       const element = document.elementFromPoint(event.clientX, event.clientY);
-      if (element && element.tagName === 'BUTTON') {
+      if (
+        element &&
+        (element.tagName === 'BUTTON' || element.tagName === 'ARTICLE')
+      ) {
         setIsOverButton(true);
       } else {
         setIsOverButton(false);
